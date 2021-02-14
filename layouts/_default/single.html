@@ -1,11 +1,4 @@
 {{ define "head" }}
-	{{ if .Params.featuredImg -}}
-	<style>.bg-img {background-image: url('{{.Params.featuredImg}}');}</style>
-	{{- else if .Params.images -}}
-		{{- range first 1 .Params.images -}}
-		<style>.bg-img {background-image: url('{{. | absURL}}');}</style>
-		{{- end -}}
-	{{- end -}}
 {{ end }}
 
 {{ define "header" }}
@@ -14,7 +7,7 @@
 
 {{ define "main" }}
 	{{- if (or .Params.images .Params.featuredImg) }}
-	<div class="bg-img"></div>
+	<!-- <div class="bg-img"></div> -->
 	{{- end }}
 	<main class="site-main section-inner thin animated fadeIn faster">
 		<h1 class="single-title">{{ .Title }}</h1>
